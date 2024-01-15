@@ -13,7 +13,11 @@ const params = {
     databaseURL: process.env.FIREBASE_DATABASE_URL
 }
 
+console.log(params)
+
 const privateKey = formatPrivateKey(params.privateKey)
+
+console.log(privateKey)
 
 const cert = admin.credential.cert({
     projectId: params.projectId,

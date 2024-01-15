@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { getDatabase } = require("firebase-admin");
 const { adminApp } = require("./firebaseAdmin");
 
 app.use(cors());
