@@ -24,7 +24,7 @@ console.log(formattedPrivateKey);
 // Create Firebase Admin SDK credentials using the formatted private key
 const cert = admin.credential.cert({
     projectId: params.projectId,
-    privateKey: formattedPrivateKey,
+    privateKey: params.privateKey,
     clientEmail: params.clientEmail
 });
 
