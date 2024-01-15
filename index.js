@@ -1,24 +1,25 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { adminApp } = require("./firebaseAdmin");
+const adminApp = require("./firebaseAdmin"); 
 
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
 app.get("/", (req, res) => res.send("Hello World!"));
 
 app.post("/api", async (req, res) => {
-  console.log("initalized admin");
+  console.log("initialized admin");
   const db = adminApp.database();
   console.log("admin database connected");
 
   const ref = db.ref("steps");
   console.log("referenced steps");
+  
   const body = req.body;
   body.timestamp = Date.now();
+  
   await ref.push(body);
-
   res.json({ status: "ok" });
 });
 
